@@ -164,7 +164,7 @@ $roomname = "Office"; //Default room
 				<?php
 
 				$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, global $sonosapi . "/zones");
+				curl_setopt($curl, CURLOPT_URL, $GLOBALS['sonosapi'] . "/zones");
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 				$result = curl_exec($curl);
@@ -188,7 +188,7 @@ $roomname = "Office"; //Default room
 			<?php
 
 			$curl = curl_init();
-			curl_setopt($curl, CURLOPT_URL, global $sonosapi . "/" . $rooname . "/favorites/detailed");
+			curl_setopt($curl, CURLOPT_URL, $GLOBALS['sonosapi'] . "/" . $rooname . "/favorites/detailed");
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 			$result = curl_exec($curl);
