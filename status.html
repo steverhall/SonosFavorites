@@ -1,0 +1,74 @@
+<HTML><BODY>
+<H1>Sonos Phone Status</H1>
+<p>
+Fri 15 May 13:21:01 EDT 2020
+</p>
+<hr>
+<H1>Disk space</H1>
+<pre>
+/dev/mmcblk0p1     43234   22865     20369  53% /boot
+</pre>
+<hr>
+<H1>Processes</H1>
+<pre>
+alexapi    474     1  2 May02 ?        08:11:20 /usr/bin/python3 /opt/AlexaPi/src/main.py --daemon
+alexapi   6061     1 93 May06 ?        8-10:19:16 /usr/bin/python3 /opt/ReadKey/readkey.py --daemon
+alexapi   9951     1  0 May14 ?        00:01:18 node /opt/SonosHttp/server.js
+</pre>
+<hr>
+<H1>System log</H1>
+<pre>
+-- Logs begin at Wed 2020-05-13 17:35:01 EDT, end at Fri 2020-05-15 13:21:01 EDT. --
+May 15 13:13:01 sonosphone CRON[852]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:12:02 sonosphone CRON[836]: pam_unix(cron:session): session closed for user root
+May 15 13:12:02 sonosphone CRON[836]: (CRON) info (No MTA installed, discarding output)
+May 15 13:12:01 sonosphone CRON[840]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:12:01 sonosphone CRON[836]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:11:02 sonosphone CRON[820]: pam_unix(cron:session): session closed for user root
+May 15 13:11:02 sonosphone CRON[820]: (CRON) info (No MTA installed, discarding output)
+May 15 13:11:02 sonosphone CRON[824]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:11:02 sonosphone CRON[820]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:10:01 sonosphone CRON[804]: pam_unix(cron:session): session closed for user root
+May 15 13:10:01 sonosphone CRON[804]: (CRON) info (No MTA installed, discarding output)
+May 15 13:10:01 sonosphone CRON[808]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:10:01 sonosphone CRON[804]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:09:03 sonosphone systemd[1]: Started Clean php session files.
+May 15 13:09:02 sonosphone CRON[730]: pam_unix(cron:session): session closed for user root
+May 15 13:09:02 sonosphone CRON[730]: (CRON) info (No MTA installed, discarding output)
+May 15 13:09:01 sonosphone CRON[731]: pam_unix(cron:session): session closed for user root
+May 15 13:09:01 sonosphone systemd[1]: Starting Clean php session files...
+May 15 13:09:01 sonosphone CRON[740]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:09:01 sonosphone CRON[739]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 15 13:09:01 sonosphone CRON[731]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:09:01 sonosphone CRON[730]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:08:02 sonosphone CRON[714]: pam_unix(cron:session): session closed for user root
+May 15 13:08:02 sonosphone CRON[714]: (CRON) info (No MTA installed, discarding output)
+May 15 13:08:01 sonosphone CRON[718]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:08:01 sonosphone CRON[714]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:07:02 sonosphone CRON[698]: pam_unix(cron:session): session closed for user root
+May 15 13:07:02 sonosphone CRON[698]: (CRON) info (No MTA installed, discarding output)
+May 15 13:07:02 sonosphone CRON[702]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:07:02 sonosphone CRON[698]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:06:01 sonosphone CRON[681]: pam_unix(cron:session): session closed for user root
+May 15 13:06:01 sonosphone CRON[681]: (CRON) info (No MTA installed, discarding output)
+May 15 13:06:01 sonosphone CRON[686]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:06:01 sonosphone CRON[681]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:05:02 sonosphone CRON[665]: pam_unix(cron:session): session closed for user root
+May 15 13:05:02 sonosphone CRON[665]: (CRON) info (No MTA installed, discarding output)
+May 15 13:05:01 sonosphone CRON[669]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:05:01 sonosphone CRON[665]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:04:01 sonosphone CRON[649]: pam_unix(cron:session): session closed for user root
+May 15 13:04:01 sonosphone CRON[649]: (CRON) info (No MTA installed, discarding output)
+May 15 13:04:01 sonosphone CRON[653]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:04:01 sonosphone CRON[649]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:03:02 sonosphone CRON[633]: pam_unix(cron:session): session closed for user root
+May 15 13:03:02 sonosphone CRON[633]: (CRON) info (No MTA installed, discarding output)
+May 15 13:03:01 sonosphone CRON[637]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:03:01 sonosphone CRON[633]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 15 13:02:02 sonosphone CRON[617]: pam_unix(cron:session): session closed for user root
+May 15 13:02:02 sonosphone CRON[617]: (CRON) info (No MTA installed, discarding output)
+May 15 13:02:01 sonosphone CRON[621]: (root) CMD (   /opt/SonosPhone/status.sh > /var/www/html/status.html)
+May 15 13:02:01 sonosphone CRON[617]: pam_unix(cron:session): session opened for user root by (uid=0)
+</pre>
+<hr>
+</BODY></HTML>

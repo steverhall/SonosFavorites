@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+
+function GetParameterValues(param) {  
+    var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
+    for (var i = 0; i < url.length; i++) {  
+        var urlparam = url[i].split('=');  
+        if (urlparam[0] == param) {  
+            return urlparam[1];  
+        } 
+    }  
+}  
+
+function command(cmd)
+{
+   speaker_location = GetParameterValues('location');  
+   if(!speaker_location) {
+	speaker_location = "Office";
+   }
+   var data="hello";
+   $.get("http://192.168.1.38:5005/" + speaker_location + "/" + cmd, function(response) {
+        data = response;
+   }) ;
+
+   return data;
+}
+</script>
+<style>
+button {
+	height:40px;
+	width:70px;
+	font-size:20px;
+	border-radius: 4px;
+	background-color: #ddd;
+}
+button.controller {
+	width: 95px;
+}
+div {
+	padding: 15px 0 15 0;
+}
+body {
+	background-color: blue;
+}
+</style>
+</head>
+
+<body>
+	<div/>
+	<div/>
+	<div>
+        	<button width="80" onclick="command('favorite/Fav1');">1</button>
+        	<button width="80" onclick="command('favorite/Fav2');">2</button>
+        	<button width="80" onclick="command('favorite/Fav3');">3</button>
+        	<button onclick="command('favorite/Fav4');">4</button>
+	</div>
+	<div>
+        	<button onclick="command('favorite/Fav5');">5</button>
+        	<button onclick="command('favorite/Fav6');">6</button>
+        	<button onclick="command('favorite/Fav7');">7</button>
+        	<button onclick="command('favorite/Fav8');">8</button>
+	</div>
+	<div>
+        	<button onclick="command('favorite/Fav90');">90</button>
+        	<button onclick="command('favorite/Fav91');">91</button>
+        	<button onclick="command('favorite/Fav92');">92</button>
+        	<button onclick="command('favorite/Fav93');">93</button>
+	</div>
+	<div>
+        	<button onclick="command('favorite/Fav94');">94</button>
+        	<button onclick="command('favorite/Fav95');">95</button>
+        	<button onclick="command('favorite/Fav96');">96</button>
+        	<button onclick="command('favorite/Fav97');">97</button>
+	</div>
+	<div>
+        	<button onclick="command('favorite/Fav98');">98</button>
+        	<button onclick="command('favorite/Fav99');">99</button>
+	</div>
+	<div> </div>
+	<div>
+        	<button class="controller" onclick="command('volume/+3');">Vol -</button>
+        	<button class="controller" onclick="command('playpause');">Play/Pause</button>
+        	<button class="controller" onclick="command('volume/-3');">Vol +</button>
+	</div>
+	<div>
+        	<button class="controller" onclick="command('previous');">Prev</button>
+        	<button class="controller" onclick="command('next');">Next</button>
+	</div>
+</body>
+</html>
