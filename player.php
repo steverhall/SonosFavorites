@@ -1,5 +1,5 @@
 <?php
-$sonosapi = "192.168.1.38:5005";
+$sonosapi = "http://192.168.1.38:5005";
 $roomname = "Office"; //Default room
 ?>
 <html>
@@ -17,7 +17,7 @@ $roomname = "Office"; //Default room
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-indigo.min.css" />
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<script>
-		var sonosapi = "192.168.1.38:5005";
+		var sonosapi = "http://192.168.1.38:5005";
 		var roomname = "Office";
 		var speaker_location = GetParameterValues('location');
 
@@ -164,7 +164,7 @@ $roomname = "Office"; //Default room
 				<?php
 
 				$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, $GLOBALS['sonosapi'] . "/zones");
+				curl_setopt($curl, CURLOPT_URL, $sonosapi . "/zones");
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 				$result = curl_exec($curl);
@@ -188,7 +188,7 @@ $roomname = "Office"; //Default room
 			<?php
 
 			$curl = curl_init();
-			curl_setopt($curl, CURLOPT_URL, $GLOBALS['sonosapi'] . "/" . $rooname . "/favorites/detailed");
+			curl_setopt($curl, CURLOPT_URL, $sonosapi . "/" . $roomname . "/favorites/detailed");
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 			$result = curl_exec($curl);
