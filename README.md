@@ -3,4 +3,4 @@ Lists all of your Sonos favorites (via node-sonos-http-api) for quick and easy p
 
 Mobile web app for controlling Sonos easily. Requires an implementation of [jishi/node-sonos-http-api](https://github.com/jishi/node-sonos-http-api) to be running and referenced in the code.
 
-![](screenshot.png?raw=true)
+![](screenshot.png?raw=true | width=260)
