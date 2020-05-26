@@ -10,7 +10,8 @@ $roomname = "Office"; //Default room
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="apple-touch-icon" href="favicon.png">
 	<script>
@@ -42,7 +43,7 @@ $roomname = "Office"; //Default room
 			}
 		}
 
-		function command(cmd, el) {
+		function command(cmd) {
 			'use strict()';
 
 
@@ -53,7 +54,35 @@ $roomname = "Office"; //Default room
 
 			return data;
 		}
-	</script>
+    </script>
+    <style>
+        button {
+            height:40px;
+            width:70px;
+            font-size:20px;
+            border-radius: 4px;
+            background-color: #ddd;
+        }
+
+        button.controller {
+            width: 95px;
+        }
+
+        button.selection  {
+            height: 40px;
+            width: 180px;
+            font-size: 20px;
+            border-radius: 4px;
+            background-color: #ddd;
+        }
+
+        div {
+            padding: 15px 0 15 0;
+        }
+        body {
+            background-color: blue;
+        }
+    </style>
 </head>
 
 <body>
@@ -101,14 +130,14 @@ $roomname = "Office"; //Default room
 				if (isset($value->albumArtUri)) {
                     echo "<div style='line-height:86px; '>";
                     echo "<span style='display: inline-block; vertical-align:middle; line-height: normal;'>";
-                    echo "<a style='height:60px; cursor: pointer;' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<a style='height:60px; cursor: pointer;' onclick=\"command('favorite/" . $value->title . "');\">";
                     echo "<img style='width:60px' src=\"" . $value->albumArtUri . "\"/>";
                     echo "</a>";
 					$response = new SimpleXMLElement($value->metadata);
                     echo "<span style='padding-left: 8px; font-size: 18px; height:80px; display: inline-block; vertical-align:middle;'>";
-                    echo "<a style='height:60px; cursor: pointer;' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<button class='selection' onclick=\"command('favorite/" . $value->title . "');\">";
                     echo $response->item[0]->children('dc', true)->title;
-                    echo "</a></span>";
+                    echo "</button></span>";
 					echo "</span>";
                     
                     echo "</div>";
@@ -127,7 +156,19 @@ $roomname = "Office"; //Default room
 				<button style="height: 50px; width: 50px;" onclick="command('next');">
                     NEXT
 				</button>
-			</div>
+            </div>
+            
+          
+            <div>
+                <button class="controller" onclick="command('volume/-3');">Vol -</button>
+                <button class="controller" onclick="command('playpause');">Play/Pause</button>
+                <button class="controller" onclick="command('volume/+3');">Vol +</button>
+            </div>
+            <div>
+                <button class="controller" onclick="command('previous');">Prev</button>
+                <button class="controller" onclick="command('next');">Next</button>
+            </div>
+          
 
 
 	</div>
@@ -137,3 +178,7 @@ $roomname = "Office"; //Default room
 </body>
 
 </html>
+
+
+
+
