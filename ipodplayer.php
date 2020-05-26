@@ -105,18 +105,20 @@ $roomname = "Office"; //Default room
 			foreach ($json as $value) {
 				if (isset($value->albumArtUri)) {
                     echo "<div style='line-height:86px; '>";
-                    echo "<a style='height:80px' onclick=\"command('favorite/" . $value->title . "', this);\">";
                     echo "<span style='display: inline-block; vertical-align:middle; line-height: normal;'>";
-					echo "<img style='width:80px' src=\"" . $value->albumArtUri . "\"/>";
-					$response = new SimpleXMLElement($value->metadata);
-					echo "<span style='padding-left: 8px; font-size: 24px; height:80px; display: inline-block; vertical-align:middle;'>" . $response->item[0]->children('dc', true)->title . "</span>";
-					echo "</span></li>";
+                    echo "<a style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<img style='width:60px' src=\"" . $value->albumArtUri . "\"/>";
                     echo "</a>";
+					$response = new SimpleXMLElement($value->metadata);
+                    echo "<span style='padding-left: 8px; font-size: 18px; height:80px; display: inline-block; vertical-align:middle;'>";
+                    echo "<a style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo $response->item[0]->children('dc', true)->title;
+                    echo "</a></span>";
+					echo "</span></li>";
+                    
                     echo "</div>";
 				}
-			}
-
-	
+			}	
 			?>
 
 			<div>
