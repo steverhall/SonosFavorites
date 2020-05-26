@@ -111,10 +111,10 @@ $roomname = "Office"; //Default room
                     echo "</a>";
 					$response = new SimpleXMLElement($value->metadata);
                     echo "<span style='padding-left: 8px; font-size: 18px; height:80px; display: inline-block; vertical-align:middle;'>";
-                    echo "<button style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<a href='' style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
                     echo $response->item[0]->children('dc', true)->title;
-                    echo "</button></span>";
-					echo "</span></li>";
+                    echo "</a></span>";
+					echo "</span>";
                     
                     echo "</div>";
 				}
@@ -122,14 +122,14 @@ $roomname = "Office"; //Default room
 			?>
 
 			<div>
-                <button style="height: 80px; width: 80px;" onclick="command('previous');">
+                <button style="height: 50px; width: 50px;" onclick="command('previous');">
 					PREV
 				</button>
-				<button style="height: 80px; width: 120;" onclick="command('playpause');">
+				<button style="height: 50px; width: 80px;" onclick="command('playpause');">
                     PLAY/PAUSE				
                 </button>
 				
-				<button style="height: 80px; width: 80px;" onclick="command('next');">
+				<button style="height: 50px; width: 50px;" onclick="command('next');">
                     NEXT
 				</button>
 			</div>
