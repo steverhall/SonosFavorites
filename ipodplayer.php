@@ -44,15 +44,10 @@ $roomname = "Office"; //Default room
 		function command(cmd, el) {
 			'use strict()';
 
-			if (el) {
-				$('.mdl-list__item').css("background-color", "#fafafa");
-				$(el).children().css("background-color", "#e32564aa");
-			}
 
 			var data = "hello";
 			$.get(sonosapi + "/" + speaker_location + "/" + cmd, function(response) {
 				data = response;
-				$(el).children().css("background-color", "#dfdfdf");
 			});
 
 			return data;
@@ -62,7 +57,7 @@ $roomname = "Office"; //Default room
 </head>
 
 <body>
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<div>
 		<select onchange="setlocation()" id="locationdropdown">
         <?php
 
