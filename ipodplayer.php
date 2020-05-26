@@ -111,9 +111,9 @@ $roomname = "Office"; //Default room
                     echo "</a>";
 					$response = new SimpleXMLElement($value->metadata);
                     echo "<span style='padding-left: 8px; font-size: 18px; height:80px; display: inline-block; vertical-align:middle;'>";
-                    echo "<a style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<button style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
                     echo $response->item[0]->children('dc', true)->title;
-                    echo "</a></span>";
+                    echo "</button></span>";
 					echo "</span></li>";
                     
                     echo "</div>";
