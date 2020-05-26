@@ -53,9 +53,6 @@ $roomname = "Office"; //Default room
 			return data;
 		}
 	</script>
-	<style>
-        * {cursor: pointer;}
-    </style>
 </head>
 
 <body>
@@ -103,12 +100,12 @@ $roomname = "Office"; //Default room
 				if (isset($value->albumArtUri)) {
                     echo "<div style='line-height:86px; '>";
                     echo "<span style='display: inline-block; vertical-align:middle; line-height: normal;'>";
-                    echo "<a style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<a style='height:60px; cursor: pointer;' onclick=\"command('favorite/" . $value->title . "', this);\">";
                     echo "<img style='width:60px' src=\"" . $value->albumArtUri . "\"/>";
                     echo "</a>";
 					$response = new SimpleXMLElement($value->metadata);
                     echo "<span style='padding-left: 8px; font-size: 18px; height:80px; display: inline-block; vertical-align:middle;'>";
-                    echo "<a href='' style='height:60px' onclick=\"command('favorite/" . $value->title . "', this);\">";
+                    echo "<a style='height:60px; cursor: pointer;' onclick=\"command('favorite/" . $value->title . "', this);\">";
                     echo $response->item[0]->children('dc', true)->title;
                     echo "</a></span>";
 					echo "</span>";
