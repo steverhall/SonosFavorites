@@ -9,7 +9,6 @@ $roomname = "Office"; //Default room
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
 	<link rel="icon" type="image/png" href="favicon.png">
@@ -23,13 +22,11 @@ $roomname = "Office"; //Default room
 			if (!speaker_location) {
 				speaker_location = roomname;
 			}
-			document.getElementById("app-title").innerHTML = speaker_location;
 		}
 
 		function setlocation() {
             var myLocation =  document.getElementById("locationdropdown");
 			speaker_location = locationdropdown.options[locationdropdown.selectedIndex].value;
-			document.getElementById("app-title").innerHTML = speaker_location;
 		}
 
 		function GetParameterValues(param) {
@@ -53,7 +50,9 @@ $roomname = "Office"; //Default room
 			});
 
 			return data;
-		}
+        }
+        
+        
     </script>
     <style>
         button {
