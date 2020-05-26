@@ -53,7 +53,9 @@ $roomname = "Office"; //Default room
 			return data;
 		}
 	</script>
-	
+	<style>
+        * {cursor: pointer;}
+    </style>
 </head>
 
 <body>
